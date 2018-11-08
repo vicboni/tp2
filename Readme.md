@@ -153,6 +153,11 @@ Lancer votre container back en même temps que votre container front et modifier
 
 Après avoir lancé les deux services de l'application, essayer d'ajouter un path à la fin de l'URL et copier la réponse obtenue dans le fichier answers.md.
 
+### 1.11 : Test des urls de write
+
+Utiliser le path /write de l'URL du front pour écrire dans le fichier log du container back.
+Vérifier le contenue du fichier log en se connectant en interactif au container back. Ecrire la commande utilisée dans le fichier answers.md
+
 ## 2 : Docker Compose
 Dans cette partie, nous allons utiliser docker-compose pour automatiser le déploiement de l'app que nous avons buildé dans la partie 1 du tp.
 
@@ -202,7 +207,8 @@ Relancer l'ensemble des services en mode détaché. Ecrire la commande utilisée
 Visualiser les logs des différents services en même temps. Ecrire la commande utilisée dans le fichier answers.md
 
 ### 2.7
-Les services sont maintenant lancés correctement via docker-compose.
+Les services sont maintenant lancés correctement via docker-compose. Cependant, à chaque redémarrage, les données sont flushée.
+
 
 - volume, network
 - named volume, named network
