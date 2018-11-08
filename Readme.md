@@ -132,6 +132,22 @@ cat /etc/*release
 ```
 Quel est l'OS utilisé dans le container ? Copier la sortie de cette commande dans le fichier answers.md.
 
+### 1.10 : Do it again (comme dirait Steely)
+Se placer dans le répertoire app/front et réaliser toutes les étapes de la partie 1.2 à 1.9 pour la partie front de notre application.
+
+Help: 
+* Normalement, c'est assez simple à partir du Dockerfile que vous avez crée pour le back
+* Les variables d'environement à setter sont : **APP_PORT** et **WS_BACK_URL**
+* Si les deux services sont démarrés, attention à l'exposition des ports
+
+N'oubliez pas de pusher votre image sur votre registry docker hub
+
+### 1.11 : C'est mieux à deux
+Lancer votre container back en même temps que votre container front et modifier les variables d'environement du front pour intégrer les deux (indice: ça devrait se passer au niveau du WS_BACK_URL). Ecrire la commande utilisée dans le fichier answers.md
+
+> Attention: l'url à utiliser pour point sur le service back n'est pas si simple à trouver. Vérifier vos ips.
+
+Après avoir lancé les deux services de l'application, essayer d'ajouter un path à la fin de l'URL et copier la réponse obtenue dans le fichier answers.md.
 
 ## 2 : Docker Compose
 - link between app
