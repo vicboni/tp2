@@ -104,15 +104,28 @@ kubectl config use-context ece{NB}
 
 * Vérifier que la configuration fonctionne correctement
 ```bash
+kubectl get pods --all-namespaces
 ```
-
-* connect to kube cluster
-* list env
-* list node / get system info / os
+```bash
+NAMESPACE     NAME                                    READY   STATUS    RESTARTS   AGE
+kube-system   heapster-5f8d5688-lr5p4                 2/2     Running   0          14h
+kube-system   kube-dns-v20-668899dbdc-n4rg8           3/3     Running   0          14h
+kube-system   kube-dns-v20-668899dbdc-v8fwh           3/3     Running   0          14h
+kube-system   kube-proxy-m8gqs                        1/1     Running   0          14h
+kube-system   kube-proxy-sr4nr                        1/1     Running   0          14h
+kube-system   kube-proxy-xwvt8                        1/1     Running   0          14h
+kube-system   kube-svc-redirect-56cx6                 2/2     Running   0          14h
+kube-system   kube-svc-redirect-gxzw9                 2/2     Running   0          14h
+kube-system   kube-svc-redirect-rf4nb                 2/2     Running   0          14h
+kube-system   kubernetes-dashboard-7ff68ff786-h44zh   1/1     Running   2          14h
+kube-system   metrics-server-76f76c6bfd-dhjbl         1/1     Running   0          14h
+kube-system   tunnelfront-5b5b89b86c-qjgbt            1/1     Running   0          14h
+```
 
 ### 2.1 : Naviguer dans l'aide de Kubernetes
 
-### 2.X : Idée en vrac
+### 2.2 : Se familiariser avec Kubernetes
+
 ```bash
 # Récupérer les infos du cluster
 kubectl cluster-info
@@ -124,8 +137,9 @@ kubectl get node -o wide
 kubectl get pod
 ```
 
-* list pods
-* créer fichier conf yaml
-* déployer pod
-* déployer service
-* a chaque fois, lister les objets qui ont été crées
+### 2.3 : Déployer le projet sur Kubernetes
+
+* Regarder du coté de [Kompose](http://kompose.io/)
+* Voir les manifests générés et déployer sur Kubernetes
+* A quoi servent les fichiers *deployment* et *service* ?
+* Lister les déploiements, les pods et les services générés sur le cluster
