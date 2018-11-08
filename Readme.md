@@ -8,7 +8,6 @@ git pull
 ```
 
 ## Instructions
-Le TP s'appuie sur [un autre repo Github](https://github.com/cours-ece/simple-java-hello-world).
 Les réponses aux questions posées dans cet énoncé sont attendues dans un fichier **answers.md** situé dans le repo mentionné ci-dessus.
 
 Le TP doit être réalisé individuellement

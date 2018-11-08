@@ -35,7 +35,6 @@ answer:
 
 ## 1.11
 command: 
-answer:
 
 ## 2.1
 command: 
