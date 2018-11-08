@@ -47,21 +47,25 @@ Le TP doit être réalisé individuellement
 
 
 ## 0 : Description du projet
-rng = web service generating random bytes
-hasher = web service computing hash of POSTed data
-worker = background process using rng and hasher
-webui = web interface to watch progress
+Tout au lond de ce tp, nous allons nous baser sur le projet situé dans le répertoire app de ce repo. Cette application est composée d'un front qui fait essentiellement office de passe-plat vers le back qui lui réalise les actions.
+L'application renvoie différentes informations sur:
+* les hostname des back et front
+* l'url appelée
+* l'heure d'appel
+* l'environement dans lequel l'app à été déployée
 
-How DockerCoins works:
-* worker asks to rng to generate a few random bytes
-* worker feeds these bytes into hasher
-* and repeat forever!
-* every second, worker updates redis to indicate how many loops were done
-* webui queries redis, and computes and exposes "hashing speed" in your browser
+L'application peut être requêtée sur :
+* n'importe quelle path
+* ou sur le path /write
+
+Un appel sur le path /write, engendrera une écriture de l'argument passé en paramètre dans un fichier de log situé dans le container back.
 
 ## 1 : Docker
 
+
 * Faire une pull request comme d'hab + donner un nombre à chaque personnes / table
+
+### 1.1 : 
 
 * Ecrire un dockerfile
 * Build
