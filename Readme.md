@@ -210,12 +210,6 @@ Visualiser les logs des différents services en même temps. Ecrire la commande 
 Les services sont maintenant lancés correctement via docker-compose. Cependant, à chaque redémarrage, les données sont flushée.
 
 
-- volume, network
-- named volume, named network
-- up, down, logs (-f), -d, 
-- --scale worker=2 (to 10 after)
-each time, see logs 
-- ajouter le truc d'écriture dans la partie 1
 
 ## 3 : Kubernetes
 
