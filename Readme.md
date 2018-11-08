@@ -1,5 +1,12 @@
 # TP 2 : Docker/Kubernetes
 
+## Mise à jour
+Après avoir forké le repo, pour se mettre à jour avec la dernière version, exécuter les commandes suivantes:
+```bash
+git remote add parent https://github.com/cours-ece/tp2.git
+git pull
+```
+
 ## Instructions
 Le TP s'appuie sur [un autre repo Github](https://github.com/cours-ece/simple-java-hello-world).
 Les réponses aux questions posées dans cet énoncé sont attendues dans un fichier **answers.md** situé dans le repo mentionné ci-dessus.
@@ -38,12 +45,9 @@ Le TP doit être réalisé individuellement
 * Logging
 * Monitoring
 * Alerting
-* Rolling update - Pas sur pour celui la
+* Rolling update
 * Helm
 * Service Mesh
-
-### Gitflow
-![Gitflow diagram](https://stxnext.com/media/filer_public_thumbnails/filer_public/d4/41/d4414c91-483b-4904-9c1b-fc92c899678c/gitflow.png__1011x520_q85_crop_subsampling-2_upscale.png "Gitflow diagram")
 
 
 ## 0 : Description du projet
@@ -150,12 +154,62 @@ Lancer votre container back en même temps que votre container front et modifier
 Après avoir lancé les deux services de l'application, essayer d'ajouter un path à la fin de l'URL et copier la réponse obtenue dans le fichier answers.md.
 
 ## 2 : Docker Compose
-- link between app
+Dans cette partie, nous allons utiliser docker-compose pour automatiser le déploiement de l'app que nous avons buildé dans la partie 1 du tp.
+
+### 2.0 : Télécharger docker-compose
+Aller sur [le site officiel](https://docs.docker.com/compose/install/) et installer docker-compose pour votre OS
+
+> Attention: Vérifier que vous avez bien stoppé tous vos containers avant de démarrer cette partie.
+
+### 2.1 : Création du docker compose
+A la racine du répertoire app, créer un ficher docker-compose.yml contenant le code suivant:
+```yaml
+version: '3'
+services:
+  mon-service:
+    image: mon-image
+```
+
+Editer le fichier pour pointer sur votre image back et renommer le service comme vous le souhaitez. Puis, démarrer le service back à l'aide des commandes **docker-compose** 
+
+> Documentation disponible sur le site officiel
+
+Ecrire la commande utilisée dans le fichier answers.md
+
+### 2.2 : Ports
+Modifier le docker-compose.yml pour ajouter un montage sur le port accessible du service back.
+
+Relancer le container et tester la solution.
+
+### 2.3 : Env var
+Modifier le docker-compose.yml pour ajouter la variable d'environement nécessaire à l'utilisation du service back.
+
+Relancer le container et tester la solution.
+
+### 2.4 : A deux c'est mieux
+Modifier le docker-compose.yml pour ajouter le service front. Ne pas oublier de renseigner les ports et variables d'environement.
+
+Relancer les container et tester la solution.
+
+### 2.5 : Pour vivre heureux, vivons cachés
+Pour l'instant les services front et back sont exposés sur le host. Hors, le service back ne devrait pas être accessible directement mais uniquement par l'intermédiaire du service front.
+
+Modifier le docker-compose.yml en supprimant le port exposé du service back et faire pointer le service front directement sur le container du back.
+
+### 2.6 : Détachez le !
+Relancer l'ensemble des services en mode détaché. Ecrire la commande utilisée dans le fichier answers.md
+
+Visualiser les logs des différents services en même temps. Ecrire la commande utilisée dans le fichier answers.md
+
+### 2.7
+Les services sont maintenant lancés correctement via docker-compose.
+
 - volume, network
 - named volume, named network
 - up, down, logs (-f), -d, 
 - --scale worker=2 (to 10 after)
 each time, see logs 
+- ajouter le truc d'écriture dans la partie 1
 
 ## 3 : Kubernetes
 
