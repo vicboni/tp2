@@ -135,7 +135,7 @@ kubectl get pod
 
 ### 2.3 : Déployer le projet sur Kubernetes
 
-* Regarder du coté de ![Kompose](http://kompose.io/)
+* Regarder du coté de [Kompose](http://kompose.io/)
 * Voir les manifests générés et déployer sur Kubernetes
 * A quoi servent les fichiers *deployment* et *service* ?
 * Lister les déploiements, les pods et les services générés sur le cluster
