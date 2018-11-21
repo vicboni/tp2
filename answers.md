@@ -41,7 +41,7 @@ ID=alpine
 VERSION_ID=3.8.1
 PRETTY_NAME="Alpine Linux v3.8"
 HOME_URL="http://alpinelinux.org"
-BUG_REPORT_URL="http://bugs.alpinelinux.org"*
+BUG_REPORT_URL="http://bugs.alpinelinux.org"
 
 ## 1.11
 command: docker run -it --rm -p 8081:8081 -e APP_PORT=8081 -e WS_BACK_URL=172.20.10.3 vicboni123/tp2.front
